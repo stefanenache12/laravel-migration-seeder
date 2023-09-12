@@ -3,14 +3,29 @@
 @import "./mixins";
 
 header {
-    color: $primary-color;
+    padding: 25px 0;
+    background-color: rgb(43, 43, 43);
+    h1 {
+        color: whitesmoke;
+    }
 }
 
 main {
-    color: yellow;
-    @include main-styles;
-}
+    .in-time {
+        width: 20px;
+        height: 20px;
+        background-color: green;
+        border-radius: 50%;
+    }
 
-footer {
-    color: red;
+    .not-in-time {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+    }
+
+    .table {
+        border: 2px solid black;
+    }
 }
