@@ -13,13 +13,15 @@ class TrainsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        Train::truncate();
+
         for ($i=0; $i < 15; $i++) { 
 
             $train = new Train();
 
-            $train->train_company = fake()->word();
-            $train->departure_station = fake()->word();
-            $train->arrival_station = fake()->word();
+            $train->train_company = fake()->company();
+            $train->departure_station = fake()->city();
+            $train->arrival_station = fake()->city();
             $train->departure_time = fake()->dateTimeBetween('-3 day');
             $train->arrival_time = fake()->dateTimeBetween('-2 day');
             $train->train_number = fake()->randomNumber(5, true);
